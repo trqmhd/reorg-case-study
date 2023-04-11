@@ -86,7 +86,7 @@ Update payment data if required
 ---
 **NOTE**
 
-If it's for Production Deployment, I would have considered here couple of course of actions: 
+If it's for Production Deployment, I would have considered any of the following course of actions: 
 - Elasticsearch'd be an excellent choice for implementing the search functionality. Real-time search with auto-completion and fuzzy matching, which are great for implementing typeahead functionality. 
 
 - Choosing MongoDB as its database is a valid option. Having said that, it may not be the best choice for production site if data heavily rely on complex relational queries or ACID transactions for production site. So understanding the data & its relation are key factor to choose which I avoided due the time constraints.
