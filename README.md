@@ -85,6 +85,7 @@ Update payment data if required
 
 ---
 **NOTE**
+
 If it's for Production Deployment, I would have considered here couple of course of actions: 
 - Elasticsearch'd be an excellent choice for implementing the search functionality. Real-time search with auto-completion and fuzzy matching, which are great for implementing typeahead functionality. 
 
@@ -94,5 +95,6 @@ If it's for Production Deployment, I would have considered here couple of course
 
 - Current strategies of RDBMS-db/table can be used for raw purpose. Once getting familiar with the data and its relation, we'll have another db/table for production where relationships between different entities and model are well defined and structured to ensure data consistency and integrity.
 
-Because of time constraints and the nature/purpose of case-study, I've just keep it very simple.
+*Because of time constraints and the nature/purpose of case-study, I've just keep it very simple.
+
 ---
