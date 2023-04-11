@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import zipfile
 import urllib.request
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 from os import environ, path
 from dotenv import load_dotenv
@@ -66,6 +66,9 @@ def insert_data():
 
         # Store the filtered data in the MySQL table using SQLAlchemy's to_sql() method
         filtered_chunk.to_sql(name=table_name, con=engine, if_exists="append", index=False)
+
+    with engine.connect() as connection:
+        connection.execute(text(f'ALTER TABLE {table_name} ADD PRIMARY KEY (`Record_ID`);'))
 
     # Close the SQLAlchemy engine
     engine.dispose()
