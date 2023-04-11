@@ -1,0 +1,30 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+*.pyc
+.env
+app/__pycache__
+__pycache__
+route/__pycache__
+utils/__pycache__
+# Application specific files
+env
+.env
+venv
+.venv
+data_migration/venv
+
+# Folders
+.idea
+.vscode
+node_modules
