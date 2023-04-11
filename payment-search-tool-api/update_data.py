@@ -47,12 +47,13 @@ def update_data():
 
     # Define the chunk size (number of rows to read at a time)
     chunk_size = 10000
+    min_cost = 10
     table_name = "payment"
     print ("Data is being Updated...")
     # Loop through the CSV file in chunks
     for chunk in pd.read_csv(csv_file_path, chunksize=chunk_size, low_memory=False):
         # Filter the data to find records where a doctor accepted gifts costing more than $10
-        filtered_chunk = chunk[chunk["Total_Amount_of_Payment_USDollars"] > 10000]
+        filtered_chunk = chunk[chunk["Total_Amount_of_Payment_USDollars"] > min_cost]
         
         # filtered_chunk.replace([np.inf, -np.inf], np.nan, inplace=True)
         
