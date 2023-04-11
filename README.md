@@ -86,8 +86,11 @@ Update payment data if required
 ---
 **Screen Recoding**
 
-In order to understand both the application and its build steps, dropping a shared link of screen recoding:
-[Demo Reorg Case Study App](https://drive.google.com/drive/folders/1DlDbAbYBv-VFeY5ngrbxyF1YWO7qWqaJ?usp=share_link)
+In order to understand both the application and its build steps, dropping two shared links of screen recoding:
+
+[Build Demo](https://drive.google.com/file/d/12S2F1znlypSvTBvb_f624swR0tkMwlqd/view?usp=sharing)
+& 
+[App Demo](https://drive.google.com/file/d/1C3TxKrp2GfQ45SPJmT8nqmXbN8XsC_bN/view?usp=sharing)
 
 ---
 
