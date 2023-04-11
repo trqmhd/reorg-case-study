@@ -40,12 +40,7 @@ services:
     container_name: db
     restart: unless-stopped
     env_file:
-      - ./payment-search-tool-api/.env
-    environment:
-      MYSQL_DATABASE: "${MYSQL_DATABASE}"
-      MYSQL_USER: "${MYSQL_USER}"
-      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
-      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    - ./payment-search-tool-api/.env
     ports:
       - 3306:3306
     volumes:

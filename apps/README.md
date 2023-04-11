@@ -82,7 +82,7 @@ then change following database uri with vallues
 
 4. Then Data needs to be Inserted First.
 ```bash
-    docker exec <CONTAINER_ID_BE_APP> sh -c 'python insert_data.py'`
+    docker exec $(docker ps --filter "name=apps-be_app-1" --format "{{.ID}}") sh -c 'python insert_data.py'
 ```
     *you can get container id by running `docker ps` command
 
@@ -90,5 +90,5 @@ then change following database uri with vallues
 
 Update payment data if required
 ```bash
-    docker exec <CONTAINER_ID_BE_APP> sh -c 'python update_data.py'`
+    docker exec $(docker ps --filter "name=apps-be_app-1" --format "{{.ID}}") sh -c 'python update_data.py'
 ```

@@ -30,6 +30,7 @@ class TypeAheadResult(Resource):
                         PaymentInformation.Covered_Recipient_Last_Name.like(f'%{query}%'),
                         PaymentInformation.Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name.like(f'%{query}%'),
                         PaymentInformation.Date_of_Payment.like(f'%{query}%'),
+                        PaymentInformation.Record_ID.like(f'%{query}%'),
                         PaymentInformation.Covered_Recipient_Profile_ID.like(f'%{query}%'),
                     )
                 ).paginate(page=page, per_page=per_page, error_out=False)

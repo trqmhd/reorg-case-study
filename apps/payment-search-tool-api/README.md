@@ -38,16 +38,22 @@ Kindly ensure you have the following installed:
 ### How to Run
 1. Clone the repository
 
-2. Change directory into the project folder
+2. Create a virtual environment inside project folder
+```bash
+    python -m venv venv
+```
 
-3. Create a virtual environment
-    `python -m venv venv`
-
-4. Activate the virtual environment
-    `source venv/bin/activate`
+3. Activate the virtual environment
+```bash
+    source venv/bin/activate
+```
 
 5. Install Require Libraries
-    `pip install -r requirements.txt`
+```bash
+    pip install -r requirements.txt
+```
 
 6. Then Run the Flask application    
-    `python app.py`
+```bash
+    python app.py
+```
