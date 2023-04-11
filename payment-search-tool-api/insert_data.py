@@ -19,11 +19,13 @@ def insert_data():
     url = "https://download.cms.gov/openpayments/PGYR20_P012023.ZIP"
 
     # Download the zip file
+    print ("Downloading Zip file...")
     urllib.request.urlretrieve(url, 'openPaymentData.zip')
 
     # Extract the contents of the zip file
     with zipfile.ZipFile('openPaymentData.zip', 'r') as zip_ref:
         zip_ref.extractall('openPaymentData')
+    print ("Zip file extracted...")
 
 
     script_path = os.path.abspath(__file__)
