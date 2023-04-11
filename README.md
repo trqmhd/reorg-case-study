@@ -84,6 +84,14 @@ Update payment data if required
 ```
 
 ---
+**Screen Recoding**
+
+In order to understand both the application and its build steps, dropping a shared link of screen recoding:
+[Demo Reorge Case Study](https://drive.google.com/drive/folders/1DlDbAbYBv-VFeY5ngrbxyF1YWO7qWqaJ?usp=share_link)
+
+---
+
+---
 **NOTE**
 
 If it's for Production Deployment, I would have considered any of the following course of actions: 
