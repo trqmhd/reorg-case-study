@@ -95,6 +95,6 @@ If it's for Production Deployment, I would have considered any of the following 
 
 - Current strategies of RDBMS-db/table can be used for raw purpose. Once getting familiar with the data and its relation, we'll have another db/table for production where relationships between different entities and model are well defined and structured to ensure data consistency and integrity.
 
-*Because of time constraints and the nature/purpose of case-study, I've just keep it very simple.
+*Because of time constraints and the nature/purpose of case-study, I've just kept it very simple.
 
 ---
