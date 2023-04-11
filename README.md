@@ -61,34 +61,38 @@ Kindly ensure you have the following installed:
 
 1. Clone the Repository
 
-2. Then rename both .env.template file to .env file. inside `payment-search-tool-api` & `payment-search-tool-ui` directory. 
+2. Then rename both .env.template file to .env file. inside `payment-search-tool-api` & `payment-search-tool-ui` directory by running it.
 ```bash
-    cat .env.example > .env
-```
-then change following database uri with vallues
-
-```bash
-    LOCAL_SQLALCHEMY_DATABASE_URI='mysql+pymysql://<MYSQL_USER>:<MYSQL_PASSWORD>@db/<MYSQL_DATABASE>'
-    MYSQL_DATABASE=<XXXXX>
-    MYSQL_USER=<XXXXX>
-    MYSQL_PASSWORD=<XXXXX>
-    MYSQL_ROOT_PASSWORD=<XXXXX> 
+    cp payment-search-tool-api/.env.template payment-search-tool-api/.env && cp payment-search-tool-ui/.env.template payment-search-tool-ui/.env
 ```
 
 3. Now to start both backend and front end application.
 ```bash
-    docker compose up -d --build --remove-orphans
+    docker compose up -d --build
 ```
 
 4. Then Data needs to be Inserted First.
 ```bash
-    docker exec $(docker ps --filter "name=apps-be_app-1" --format "{{.ID}}") sh -c 'python insert_data.py'
+    docker exec $(docker ps --filter "name=reorg-case-study-be_app" --format "{{.ID}}") sh -c 'python insert_data.py'
 ```
-    *you can get container id by running `docker ps` command
 
 5. As insertion time depends on amount of Data, meanwhile you can open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Update payment data if required
 ```bash
-    docker exec $(docker ps --filter "name=apps-be_app-1" --format "{{.ID}}") sh -c 'python update_data.py'
+    docker exec $(docker ps --filter "name=reorg-case-study-be_app" --format "{{.ID}}") sh -c 'python update_data.py'
 ```
+
+---
+**NOTE**
+If it's for Production Deployment, I would have considered here couple of course of actions: 
+- Elasticsearch'd be an excellent choice for implementing the search functionality. Real-time search with auto-completion and fuzzy matching, which are great for implementing typeahead functionality. 
+
+- Choosing MongoDB as its database is a valid option. Having said that, it may not be the best choice for production site if data heavily rely on complex relational queries or ACID transactions for production site. So understanding the data & its relation are key factor to choose which I avoided due the time constraints.
+
+- Initially, I did consider pyspark because of its large volumes of data and support distributed processing capabilities. For case study, it might be bit-exorbitant.
+
+- Current strategies of RDBMS-db/table can be used for raw purpose. Once getting familiar with the data and its relation, we'll have another db/table for production where relationships between different entities and model are well defined and structured to ensure data consistency and integrity.
+
+Because of time constraints and the nature/purpose of case-study, I've just keep it very simple.
+---
